@@ -1,0 +1,73 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: powderblue;
+}
+
+.header {
+  background-color: #d58c8c;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for each named section */
+
+#section1 {
+  padding: 30px;
+  background-color: #a7e7e6;
+}
+
+#section2 {
+  padding: 30px;
+  background-color: #f9f9a7;
+}
+
+#section3 {
+  padding: 30px;
+  background-color: #a1de84c9;
+}
+.lm_img{
+ border: black 1px solid ;
+}
+.img_face{
+  border: black 1px solid ;
+  padding:15px;
+  height:300px;
+ width:400px;
+}
+.img_face_gen{
+  border: black 1px solid ;
+  width:400px;
+ height:300px;
+ padding: 5px 40px;
+
+}
+.sec2_img{
+  padding: 10px;
+  display: flex;
+}
+.sec3_vdo{
+  padding: 10px;
+  display: flex;
+}
+.input_video{
+  border: red 1px solid ;
+  width:560;
+  height:410px;
+}
+.vdo_output{
+ 
+  width:550;
+  height:400px;
+}
+.sec1_text{
+  text-align: justify;
+  padding:20px;
+}
+.sec1_flex{
+  display: flex;
+justify-content: space-evenly;
+
+}

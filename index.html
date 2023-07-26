@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+  
+  <script src="facemesh.js"></script>
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@v0.152.2/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@<0.152.2/examples/jsm/"
+      }
+    }
+  </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+ 
+    <div class="header">
+      <h1>AI Enabled 3D Face Generation</h1>
+  </div>
+ <!-- Content for Section 1 goes here -->
+ <div class="section" id="section1">
+  <h2>Landmark Detection from Image</h2>
+  <p>Select the color of Landmark: <input type="color" id="landmark-color-picker" value="#FF0000"></p>
+  <p >Select the image for creating Face mesh : <input type="file" id="file-input"></p>
+  <div class="sec1_flex">
+  <div><canvas id="output-canvas" width="640" height="500" class="lm_img" ></canvas></div>
+  <div class="sec1_text">This web application leverages the advanced Mediapipe FaceMesh API to perform real-time and precise facial landmark detection. By analyzing key facial points like eyes, nose, and mouth, the API creates triangles that enable sophisticated facial animations, virtual makeup try-ons, and augmented reality effects. These dynamic features provide users with engaging and interactive experiences.
+
+The application's facial animations bring virtual characters to life by mimicking the user's expressions and emotions. This immersive interaction enhances online communication, gaming, and virtual meetings, making it an appealing tool for various industries seeking to create captivating user experiences.
+
+With virtual makeup try-ons, users can experiment with different cosmetic looks, saving time and money on traditional in-store try-outs. The accurate representation of facial features and makeup products aids in confident decision-making when selecting products, ultimately benefiting the cosmetics industry and enhancing customer satisfaction.
+
+The augmented reality effects enable superimposing virtual elements onto the user's face, opening up creative opportunities for entertainment and marketing purposes. Brands can integrate interactive filters and personalized effects to engage users and promote their products in a unique and memorable way.
+
+Furthermore, the application's potential reaches beyond entertainment and cosmetics. It holds promise for medical applications, such as facial rehabilitation, speech therapy, and emotion analysis, providing valuable tools for healthcare professionals.
+
+Overall, the web application exemplifies the power of Mediapipe's FaceMesh API, showcasing how facial landmark detection can revolutionize user interactions and open up diverse opportunities across various industries. From personalized cosmetics to immersive entertainment and even healthcare applications, this technology fosters a new era of interactive and engaging web experience
+  </div>
+</div>
+</div>
+
+
+<!-- Content for Section 2 goes here -->
+<div class="section" id="section2">
+  <h2>Image to 3D Face</h2>
+  <p >Select the image to generate 3D Face: <input type="file" id="file-input-img"></p>
+  
+<div class="sec2_img">
+  <img id="imageDisplay" class = " img_face" style="max-width:500px;">
+<div><p>==></p></div>
+  <div id="threejs" class="img_face_gen"></div>
+</div>
+  <!-- <canvas id="output-canvas-img" width="640" height="400" class="img_face"></canvas> -->
+
+<p>Click and drag on the 3D face </p>
+</div>
+
+<!-- Content for Section 3 goes here -->
+<div class="section" id="section3">
+  <h2>Live video to 3D Face</h2>
+  
+<div class="sec3_vdo">
+    <video class="input_video" ></video>
+    <!-- <canvas class="output_canvas_vdo" width="640px" height="480px"></canvas> -->
+    <div><p>==></p></div>
+    <div id="threejs1"  class="vdo_output"></div>
+    </div>
+
+  <!-- Load main.js, which will handle the event listeners and setup -->
+  <script src="main.js" type="module"></script>
+  <!-- Load the face detection logic from faceDetection.js -->
+  <script src="detect_landmarks.js" type="module"></script>
+ <!-- Load the image to 3d from img_to_face.js -->
+ <script type="module" src="img_to_face.js"></script>
+  <!-- Load the detect_landmark_video from detect_landmark_video.js -->
+ <script type="module" src="detect_landmark_video.js"></script>
+<!-- Load the video_to_face from  video_to_face.js -->
+<script type="module" src=" video_to_face.js"></script>
+</div>
+</body>
+</html>
